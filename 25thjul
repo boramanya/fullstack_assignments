@@ -1,0 +1,29 @@
+//function to display current day and time
+function display(){
+    let d= new Date();
+    arr=['sunday', 'monday','tuesday','wednesday','thursday','friday','saturday'];
+    console.log("today is ", arr[d.getDay()], "!");
+    var h=d.getHours();
+    var m=d.getMinutes();
+    var s=d.getSeconds();
+    if (h>12){
+        var mer="PM";
+        h=h-12;
+    }
+    else{
+        var mer="AM";
+    }
+    
+    console.log("time is ", h,":",m,":",s," ", mer);
+}    
+
+//function to get the current datae in dd-mm-yy 
+function whatday(){
+    let d= new Date();
+    let day=d.getDate();
+    let month=d.getMonth()+1;
+    let year=d.getFullYear()
+    
+    console.log(`today is ${day}-${month}-${year}`);
+    
+}    
