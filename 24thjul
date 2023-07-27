@@ -1,0 +1,62 @@
+//prime number
+function prime(n){
+    if (n<2){
+        return false;
+    }
+        
+    for (let i=2; i<n; i++){
+        if (n%i==0){
+            return false;
+        }
+    }
+    return true;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+//armstrong number
+function armsno(num){
+    n=num;
+    sum=0;
+    
+    n=n.toString();
+    l=n.length;
+    n=parseInt(n);
+    while (n!=0){
+        r=n%10;
+        sum=sum+ (r**l);
+        n=Math.floor(n/10)
+    }
+    
+    if (num==sum){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+//add function
+function add(){
+    var sum=0;
+    for (var i=0; i<arguments.length; i++){
+        if (arguments[i] instanceof Array){
+            for (let j=0; j<arguments[i].length;j++){
+                if (typeof(arguments[i][j])!= "number"){
+                    sum=isNaN(parseInt(arguments[i][j]))?sum:sum+parseInt(arguments[i][j]);
+                }
+                else{
+                    sum=sum+arguments[i][j];
+                }
+            }
+        }
+            
+        else{
+            if (typeof(arguments[i])!= "number"){
+                sum=isNaN(parseInt(arguments[i]))?sum:sum+parseInt(arguments[i]);
+            }
+            else{
+                sum=sum+arguments[i];
+            }
+        }
+    }
+    console.log(sum);
+}
